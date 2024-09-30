@@ -5,6 +5,7 @@
     border-radius: 0.4em;
 }
 
+ /* Top Controls */
 .topControls {
     background-color: rgb(255, 255, 255);
     aspect-ratio: 12;
@@ -13,7 +14,8 @@
 }
 
 .previewLabel {
-    line-height: 2em;
+    display: inline-flex;
+    align-items: center;
 }
 
 .scaleOptionsInput {
@@ -40,6 +42,8 @@
     font-weight: bold;
 }
 
+
+ /* Display */
 .displayContainer {
     background-color: rgb(170, 131, 131);
     aspect-ratio: 1;
@@ -55,7 +59,115 @@
     bottom: 0;
 }
 
+
+ /* Bottom Controls */
 .bottomControls {
     background-color: rgb(120, 120, 138);
     aspect-ratio: 3;
+}
+
+/* Scale Slider */
+.scaleSliderContainer {
+    background-color: rgb(135, 189, 135);
+    position: relative;
+    height: 33%;
+}
+
+.scaleSlider {
+    width: 90%;
+    position: absolute;
+    right: 0;
+    top: 25%;
+}
+
+input[type='range'] {
+  -webkit-appearance: none !important;
+  appearance: none;
+  border: 1px solid black;
+  height: 15px;
+  padding: 0;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background: grey;
+  border: 1px solid black;
+  height: 30px;
+  width: 30px;
+  border-radius: 4px;
+}
+
+/* Button Group */
+.buttonGroup {
+    height: 66%;
+    background-color: rgb(236, 232, 176);
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Scale Input */
+.scaleInputContainer {
+    background-color: rgb(174, 201, 180);
+    height: 50%;
+    border-radius: 0.4em;
+    display: flex;
+    justify-content:center;
+}
+
+.addButton {
+    display: inline-block;
+    font-weight: bold;
+    aspect-ratio: 1;
+}
+
+.inputNumberContainer {
+    position: relative;
+    aspect-ratio: 1;
+}
+
+.inputNumber {    
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+/* Scale Reset Button */
+.resetButton {
+    height: 50%;
+    border-radius: 0.4em;
+    font-size: inherit;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(146, 104, 146);
+    padding: 0 0.4em;
+}
+
+/* File Input */
+.fileInputContainer{
+    height: 50%;
+    display: inline-flex;
+    align-items: center;
+    
+}
+
+.fileInputButton {
+    background-color: rgb(255, 255, 255);
+    display: inline-flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.4em;
+    border: 1px solid rgb(146, 104, 146);
+    text-align: center;
+    padding: 0 0.4em;
+    font-size: inherit;
+}
+
+#fileUpload {
+    display: none;
 }

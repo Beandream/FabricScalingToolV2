@@ -9,7 +9,7 @@
 <body>
     <h1>Fabric Scaling Tool</h1>
     
-    <div id="app" class="app">
+    <div class="app">
         <div class="topControls">
             <span class="previewLabel">Preview:</span>
             <label class="scaleOptionsLabel">
@@ -25,13 +25,31 @@
                 <span class="scaleOptionsSpan">72 Inches</span>
             </label>
         </div>
+
         <div class="displayContainer">
-            display
             <div class="rulers"> Rulers</div>
             <div class="display"> Display</div>
         </div>
+
         <div class="bottomControls">
-            bottom controls
+            <div class="scaleSliderContainer">
+                <input class="scaleSlider" type="range" min="1" max="72" step="1">
+            </div>
+            <div class="buttonGroup">
+                <div class="scaleInputContainer">
+                    <button class="addButton">-</button>
+                    <div class="inputNumberContainer">
+                        test
+                        <input class="inputNumber" type="number" value="72">
+                    </div>
+                    <button class="addButton">+</button>
+                </div>
+                <button class="resetButton">Reset Scale</button>
+                <div class="fileInputContainer">
+                    <label class="fileInputButton" for="fileUpload">Upload Image</label>
+                    <input id="fileUpload" type="file" accept="image/*" name="" id="">
+                </div>
+            </div>
         </div>
     </div>
 
