@@ -10,13 +10,28 @@
     <h1>Fabric Scaling Tool</h1>
     
     <div id="app" class="app">
+        <div class="topControls">
+            <span class="previewLabel">Preview:</span>
+            <label class="scaleOptionsLabel">
+                <input type="radio" class="scaleOptionsInput" name="scaleOptions" value="12" />
+                <span class="scaleOptionsSpan">12 Inches</span>
+            </label>
+            <label class="scaleOptionsLabel">
+                <input type="radio" class="scaleOptionsInput" name="scaleOptions" value="24" />
+                <span class="scaleOptionsSpan">24 Inches</span>
+            </label>
+            <label class="scaleOptionsLabel">
+                <input type="radio" class="scaleOptionsInput" name="scaleOptions" value="72"  checked/>
+                <span class="scaleOptionsSpan">72 Inches</span>
+            </label>
+        </div>
         <div class="displayContainer">
             display
             <div class="rulers"> Rulers</div>
             <div class="display"> Display</div>
         </div>
-        <div class="tools">
-            tools
+        <div class="bottomControls">
+            bottom controls
         </div>
     </div>
 

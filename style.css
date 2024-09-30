@@ -1,20 +1,61 @@
 .app {
-    background-color: grey;
     box-sizing: border-box;
-    aspect-ratio: 0.75;
+    border: 1px black solid;
+    padding: 0.4em;
+    border-radius: 0.4em;
+}
+
+.topControls {
+    background-color: rgb(255, 255, 255);
+    aspect-ratio: 12;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.previewLabel {
+    line-height: 2em;
+}
+
+.scaleOptionsInput {
+    display: none;
+}
+
+.scaleOptionsLabel {
+    display: flex;
+    width: 25%;
+}
+
+.scaleOptionsSpan{
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: rgb(211, 168, 168);
+    border-radius: 0.5em 0.5em 0 0;
+}
+
+.scaleOptionsInput:checked + .scaleOptionsSpan{
+    background-color: rgb(170, 131, 131);
+    font-weight: bold;
 }
 
 .displayContainer {
     background-color: rgb(170, 131, 131);
     aspect-ratio: 1;
+    position: relative;
 }
 
 .display {
-    max-width: 90%;
+    width: 90%;
     background-color: rgb(120, 151, 141);
+    position: absolute;
+    aspect-ratio: 1;
+    right: 0;
+    bottom: 0;
 }
 
-.tools {
+.bottomControls {
     background-color: rgb(120, 120, 138);
     aspect-ratio: 3;
 }
