@@ -1,0 +1,20 @@
+.app {
+    background-color: grey;
+    box-sizing: border-box;
+    aspect-ratio: 0.75;
+}
+
+.displayContainer {
+    background-color: rgb(170, 131, 131);
+    aspect-ratio: 1;
+}
+
+.display {
+    max-width: 90%;
+    background-color: rgb(120, 151, 141);
+}
+
+.tools {
+    background-color: rgb(120, 120, 138);
+    aspect-ratio: 3;
+}
