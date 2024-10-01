@@ -10,7 +10,7 @@
     <h1>Fabric Scaling Tool</h1>
     
     <div class="app">
-        <div class="topControls">
+        <div class="topControls" onchange="changeViewScaleOptions()">
             <span class="previewLabel">Preview:</span>
             <label class="scaleOptionsLabel">
                 <input type="radio" class="scaleOptionsInput" name="scaleOptions" value="12" />
@@ -28,23 +28,26 @@
 
         <div class="displayContainer">
             <div class="rulers"> Rulers</div>
-            <div class="display"> Display</div>
+            <div class="display" id="display"> Display</div>
         </div>
 
         <div class="bottomControls">
             <div class="scaleSliderContainer">
-                <input class="scaleSlider" type="range" min="1" max="72" step="1">
+                <input id="scaleRangeSlider" class="scaleSlider" type="range" min="1" max="72" step="1">
             </div>
+
             <div class="buttonGroup">
+
                 <div class="scaleInputContainer">
-                    <button class="addButton">-</button>
+                    <button id="minusButton" class="addButton" onclick="changePreviewImageScale(-1)">-</button>
                     <div class="inputNumberContainer">
-                        test
-                        <input class="inputNumber" type="number" value="72">
+                        <input id="scaleInput" class="inputNumber" type="number" value="72">
                     </div>
-                    <button class="addButton">+</button>
+                    <button id="addButton" class="addButton" onclick="changePreviewImageScale(1)">+</button>
                 </div>
-                <button class="resetButton">Reset Scale</button>
+
+                <button id="resetButton" class="resetButton" onclick="resetImageScale()">Reset Scale</button>
+
                 <div class="fileInputContainer">
                     <label class="fileInputButton" for="fileUpload">Upload Image</label>
                     <input id="fileUpload" type="file" accept="image/*" name="" id="">

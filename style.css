@@ -1,3 +1,8 @@
+:root {
+    --previewImageScale: 72;
+    --outputElementSize: 72;
+}
+
 .app {
     box-sizing: border-box;
     border: 1px black solid;
@@ -52,23 +57,23 @@
 
 .display {
     width: 90%;
-    background-color: rgb(120, 151, 141);
     position: absolute;
     aspect-ratio: 1;
     right: 0;
     bottom: 0;
+    background-image: url("IMG_9480.JPG");
+    background-repeat: repeat;
+    background-size: calc(1px * var(--previewImageScale));
 }
 
 
  /* Bottom Controls */
 .bottomControls {
-    background-color: rgb(120, 120, 138);
-    aspect-ratio: 3;
+    aspect-ratio: 4;
 }
 
 /* Scale Slider */
 .scaleSliderContainer {
-    background-color: rgb(135, 189, 135);
     position: relative;
     height: 33%;
 }
@@ -99,17 +104,16 @@ input[type='range']::-webkit-slider-thumb {
 
 /* Button Group */
 .buttonGroup {
-    height: 66%;
-    background-color: rgb(236, 232, 176);
+    height: 40%;
     align-items: center;
     display: flex;
     justify-content: space-evenly;
+    margin: 1em 0 0 0;
 }
 
 /* Scale Input */
 .scaleInputContainer {
-    background-color: rgb(174, 201, 180);
-    height: 50%;
+    height: 100%;
     border-radius: 0.4em;
     display: flex;
     justify-content:center;
@@ -138,7 +142,7 @@ input[type='range']::-webkit-slider-thumb {
 
 /* Scale Reset Button */
 .resetButton {
-    height: 50%;
+    height: 100%;
     border-radius: 0.4em;
     font-size: inherit;
     background-color: rgb(255, 255, 255);
@@ -148,7 +152,7 @@ input[type='range']::-webkit-slider-thumb {
 
 /* File Input */
 .fileInputContainer{
-    height: 50%;
+    height: 100%;
     display: inline-flex;
     align-items: center;
     
