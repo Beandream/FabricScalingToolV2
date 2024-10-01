@@ -37,11 +37,10 @@ function onScaleRangeSliderChange() {
     var value = ScaleRangeSlider.value;
     updatePreviewImageScaleValues(value)
 }
-
+updatePreviewImageScale()
 function updatePreviewImageScale() {
-    var size = Display.offsetWidth / previewImageScale;
+    var size = Display.offsetWidth / (72 / previewImageScale);
     document.documentElement.style.setProperty('--previewImageScale', size);
-    // document.documentElement.style.setProperty('--outputElementSize', Display.offsetWidth / previewImageScale);
 }
 
 function resetImageScale() {
