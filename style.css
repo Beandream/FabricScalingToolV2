@@ -55,11 +55,11 @@
 }
 
 .display {
-    width: 90%;
     position: absolute;
-    aspect-ratio: 1;
-    right: 0;
     bottom: 0;
+    right: 0;
+    width: 90%;
+    aspect-ratio: 1;
     background-image: url("IMG_9480.JPG");
     background-repeat: repeat;
     background-size: calc(1px * var(--previewImageScale));

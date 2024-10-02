@@ -1,3 +1,5 @@
+const FabricWidthOption = document.getElementById("fabricWidthOption");
+
 const Display = document.getElementById('display');
 
 const ScaleRangeSlider = document.getElementById("scaleRangeSlider");
@@ -12,12 +14,27 @@ const UploadImageInput = document.getElementById("fileUpload");
 
 ScaleRangeSlider.addEventListener("input", onScaleRangeSliderChange, false);
 
-var defaultImageScale = 72;
+var fabricWidth = 72;
+var defaultImageScale = fabricWidth;
 var previewImageScale = defaultImageScale;
+var previewImageFactor = fabricWidth;
+
+
+setup();
+function setup() {
+    // changeViewScaleOptions();
+    ScaleRangeSlider.max = fabricWidth;
+    FabricWidthOption.innerText = fabricWidth + " Inches";
+    updatePreviewImageScaleValues(fabricWidth);
+}
 
 function changePreviewImageScale(value) {
     var newValue = Number(previewImageScale) + Number(value);
     updatePreviewImageScaleValues(newValue);
+}
+
+function changeRulerScale() {
+
 }
 
 function updatePreviewImageScaleValues(value) {
@@ -27,10 +44,10 @@ function updatePreviewImageScaleValues(value) {
     updatePreviewImageScale()
 }
 
-changeViewScaleOptions();
 function changeViewScaleOptions() {
     var value = document.querySelector('input[name="scaleOptions"]:checked').value;
-    console.log(value);
+    previewImageFactor = value;
+    updatePreviewImageScale();
 }
 
 function onScaleRangeSliderChange() {
@@ -39,7 +56,7 @@ function onScaleRangeSliderChange() {
 }
 updatePreviewImageScale()
 function updatePreviewImageScale() {
-    var size = Display.offsetWidth / (72 / previewImageScale);
+    var size = Display.offsetWidth / (previewImageFactor / previewImageScale);
     document.documentElement.style.setProperty('--previewImageScale', size);
 }
 
