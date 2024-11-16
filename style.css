@@ -54,6 +54,48 @@
     position: relative;
 }
 
+/* Rulers */
+.rulerLabel {
+    width: calc(10% - 2px);
+    aspect-ratio: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+#verticalRuler {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 10%;
+    height: 90%;
+}
+
+#horizontalRuler {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 90%;
+    height: 10%;
+}
+
+.rulerInch {
+    display: inline-block;
+    /* background-color: red; */
+    width: 8.035%;
+    text-align: right;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.rulerInchVertical {
+    height: 8.035%;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    width: 50%;
+}
+
 .display {
     position: absolute;
     bottom: 0;

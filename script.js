@@ -1,5 +1,8 @@
-const FabricWidthOption = document.getElementById("fabricWidthOption");
+const FabricWidthOptionSpan = document.getElementById("fabricWidthOptionSpan");
+const FabricWidthOptionInput = document.getElementById("fabricWidthOptionInput");
 
+const HorizontalRuler = document.getElementById("horizontalRuler");
+const VerticalRuler = document.getElementById("verticalRuler");
 const Display = document.getElementById('display');
 
 const ScaleRangeSlider = document.getElementById("scaleRangeSlider");
@@ -22,10 +25,11 @@ var previewImageFactor = fabricWidth;
 
 setup();
 function setup() {
-    // changeViewScaleOptions();
     ScaleRangeSlider.max = fabricWidth;
-    FabricWidthOption.innerText = fabricWidth + " Inches";
+    FabricWidthOptionSpan.innerText = fabricWidth + " Inches";
+    FabricWidthOptionInput.value = fabricWidth;
     updatePreviewImageScaleValues(fabricWidth);
+    changeRulerScale();
 }
 
 function changePreviewImageScale(value) {
@@ -34,7 +38,26 @@ function changePreviewImageScale(value) {
 }
 
 function changeRulerScale() {
+    HorizontalRuler.innerHTML = "";
+    VerticalRuler.innerHTML = "";
 
+    var countFactor = previewImageFactor / 12;
+    var count = previewImageFactor / countFactor;
+
+    for (let i = 0; i < count; i++) {
+        var text = Math.ceil((i+ 1) * countFactor);
+
+        var rulerInchHorizontal = document.createElement("div");
+        rulerInchHorizontal.className = "rulerInch";
+        rulerInchHorizontal.innerText = text;
+        HorizontalRuler.append(rulerInchHorizontal);
+        
+        var rulerInchVertical = document.createElement("div");
+        rulerInchVertical.className = "rulerInchVertical";
+        rulerInchVertical.innerText = text;
+        VerticalRuler.append(rulerInchVertical);
+
+    }
 }
 
 function updatePreviewImageScaleValues(value) {
@@ -47,6 +70,7 @@ function updatePreviewImageScaleValues(value) {
 function changeViewScaleOptions() {
     var value = document.querySelector('input[name="scaleOptions"]:checked').value;
     previewImageFactor = value;
+    changeRulerScale();
     updatePreviewImageScale();
 }
 
