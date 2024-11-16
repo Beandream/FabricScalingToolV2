@@ -37,26 +37,26 @@
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    background-color: rgb(211, 168, 168);
+    background-color: rgb(209, 209, 209);
     border-radius: 0.5em 0.5em 0 0;
 }
 
 .scaleOptionsInput:checked + .scaleOptionsSpan{
-    background-color: rgb(170, 131, 131);
+    background-color: rgb(184, 181, 181);
     font-weight: bold;
 }
 
 
  /* Display */
 .displayContainer {
-    background-color: rgb(170, 131, 131);
+    background-color: rgb(209, 209, 209);
     aspect-ratio: 1;
     position: relative;
 }
 
 /* Rulers */
 .rulerLabel {
-    width: calc(10% - 2px);
+    width: calc(8% - 2px);
     aspect-ratio: 1;
     display: inline-flex;
     align-items: center;
@@ -68,39 +68,46 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 10%;
-    height: 90%;
+    width: 8%;
+    height: 92%;
+
+    display: flex;
+    flex-direction: column;
 }
 
 #horizontalRuler {
     position: absolute;
     right: 0;
     top: 0;
-    width: 90%;
-    height: 10%;
+    width: 92%;
+    height: 8%;
+
+    display: flex;
 }
 
 .rulerInch {
+    flex-grow: 1;
+    flex-basis: 100%;
     display: inline-block;
-    /* background-color: red; */
-    width: 8.035%;
     text-align: right;
     border-right: 1px solid black;
     border-top: 1px solid black;
 }
 
 .rulerInchVertical {
-    height: 8.035%;
+    flex-grow: 1;
+    flex-basis: 100%;
+    display: flex;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
-    width: 50%;
+    align-items: flex-end;
 }
 
 .display {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 90%;
+    width: 92%;
     aspect-ratio: 1;
     background-image: url("IMG_9480.JPG");
     background-repeat: repeat;
